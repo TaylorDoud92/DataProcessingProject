@@ -10,6 +10,8 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.Canvas;
 
 public class Window {
 
@@ -66,8 +68,10 @@ public class Window {
 		
 		JPanel panel_main = new JPanel();
 		frmKmeanSimulator.getContentPane().add(panel_main, BorderLayout.CENTER);
+		panel_main.setLayout(new BorderLayout(0, 0));
 		
-		panel_main.setLayout(null);
+		Canvas canvas = new Canvas();
+		panel_main.add(canvas, BorderLayout.CENTER);
 	}
 
 }
