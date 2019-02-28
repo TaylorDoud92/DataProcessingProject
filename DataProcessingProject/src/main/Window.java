@@ -70,8 +70,10 @@ public class Window {
 		frmKmeanSimulator.getContentPane().add(panel_main, BorderLayout.CENTER);
 		panel_main.setLayout(new BorderLayout(0, 0));
 		
-		Canvas canvas = new Canvas();
+//		Canvas canvas = new Canvas();
+//		panel_main.add(canvas, BorderLayout.CENTER);
+		
+		GridCanvas canvas = new GridCanvas(10, 10);
 		panel_main.add(canvas, BorderLayout.CENTER);
 	}
-
 }
