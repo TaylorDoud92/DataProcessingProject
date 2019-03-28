@@ -27,10 +27,18 @@ public class GridCanvas extends Canvas {
 		
 		for(int i=0; i<rows; i++) {
 			grid.drawLine(0, (i*rowHeight), getSize().width, (i*rowHeight));
+//			grid.drawRect((getSize().width/2)-3, 0, 4, getSize().height);
+			grid.fillRect((getSize().width/2)-6, 0, 4, getSize().height);
+			grid.fillRect(0, (getSize().height/2)-6, getSize().width, 4);
 		}
 		
 		for(int i=0; i<columns;i++) {
 			grid.drawLine((i*colWidth), 0, (i*colWidth), getSize().height);
 		}		
+	}
+	
+	public void paintPoint(Graphics grid) {
+		
+		grid.drawRoundRect(x, y, width, height, arcWidth, arcHeight);
 	}
 }

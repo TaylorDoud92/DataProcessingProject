@@ -73,7 +73,7 @@ public class Window {
 //		Canvas canvas = new Canvas();
 //		panel_main.add(canvas, BorderLayout.CENTER);
 		
-		GridCanvas canvas = new GridCanvas(10, 10);
+		GridCanvas canvas = new GridCanvas(40, 40);
 		panel_main.add(canvas, BorderLayout.CENTER);
 	}
 }
