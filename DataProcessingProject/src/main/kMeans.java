@@ -2,6 +2,8 @@ package main;
 
 import java.util.ArrayList;
 
+import support.Point;
+
 public class kMeans {
 
     private double[][] dataset;
@@ -10,31 +12,62 @@ public class kMeans {
     private int[] clusterID;
     private int[] inCluster;
     private double[][] centroids;
+    
+    private Point[] centroidList;
 
     private int x_dimension;
     private int y_dimension;
 
+    public kMeans(int x_dimension, int y_dimension) {
+    	this.x_dimension = x_dimension;
+    	this.y_dimension = y_dimension;
+    }
+    
+    
+    public void cluster(int numClusters, int iterations, Point[] centroids) {
+    	
+    	this.numClusters = numClusters;
+    	
+    	if(centroids != null) {
+    		this.centroidList = centroids;
+    		
+    		System.out.println("Imported Centroids!");
+    		
+    	} else {
+    		
+    		//Randomly create Centroids
+    		
+    		centroidList = new Point[this.numClusters];
+    		for(int i=0;i<numClusters;i++) {
+    			centroidList[i] = new Point((int)(Math.round((Math.random()*x_dimension))),(int)(Math.round((Math.random()*y_dimension))),0);
+    		}
+    		
+    		System.out.println("Randomly Generated Centroids!");
+    	}
+    	
+    	
+    }
+    
     public void cluster(int numClusters, int iterations, double[][] centroids) {
 
+        this.numClusters = numClusters;
         
-//        this.numClusters = numClusters;
-//        if (centroids != null) {
-//
-//            this.centroids = centroids;
-//
-//            System.out.println("Created centroids");
-//        } else {
-//
+        if (centroids != null) {
+
+            this.centroids = centroids;
+
+            System.out.println("Created centroids");
+        } else {
+        }
 //            centroids = new double[this.numClusters][];
 //            ArrayList index = new ArrayList();
 //            for (int i = 0; i < numClusters; i++) {
-//                int c;
+//                int currentCentroid;
 //                do {
 //
-//                    c = (int) (Math.random()); // c = (int)
-//                                               // (Math.random()*_nrows);
-//
-//                } while (index.contains(c));
+//                    centroid = (int) (Math.random()); // c = (int)(Math.random()*_nrows);
+//                    
+//                    } while (index.contains(c));
 //
 //                index.add(c);
 //
@@ -43,8 +76,7 @@ public class kMeans {
 //                    centroids[i][j] = dataset[c][j];
 //                }
 //                System.out.println("Selected centroids randomly");
-//
-//            }
+//                }
 //
 //            double[][] c1 = centroids;
 //            double threshold = 0.001;
