@@ -23,11 +23,11 @@ public class PointGenerator {
 
 		for (int i = 0; i < numPoints; i++) {
 			for (int j = 0; j < numPoints; j++) {
-				data[i][j] = new Point(ran.nextInt(800), ran.nextInt(800));
+				data[i][j] = new Point(ran.nextInt(800), ran.nextInt(800), 0);
 			}
 		}
 		
-		File file = new File("C:\\Users\\Taylor\\git\\DataProcessingProject\\DataProcessingProject\\src\\support\\dataset.csv");
+		File file = new File("../dataset.csv");
 		try {
 			FileOutputStream fos = new FileOutputStream(file);
 			for (int i = 0; i < numPoints; i++) {

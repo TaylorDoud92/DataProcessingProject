@@ -5,8 +5,9 @@ public class Point {
 	private int x;
 	private int y;
 	private int[] coordinates;
+	private int clusterID;
 	
-	public Point(int x, int y) {
+	public Point(int x, int y, int clusterID) {
 		this.x = x;
 		this.y = y;
 		this.coordinates = new int[2];
@@ -39,4 +40,12 @@ public class Point {
 	public String toString() {
 		return "("+ x + " "+y+"),";
 	}
+
+    public int getClusterID() {
+        return clusterID;
+    }
+
+    public void setClusterID(int clusterID) {
+        this.clusterID = clusterID;
+    }
 }
