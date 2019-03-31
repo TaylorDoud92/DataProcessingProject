@@ -10,6 +10,7 @@ public class Point {
 	public Point(int x, int y, int clusterID) {
 		this.x = x;
 		this.y = y;
+		this.clusterID = clusterID;
 		this.coordinates = new int[2];
 		
 		coordinates[0] = x;
@@ -38,7 +39,7 @@ public class Point {
 	
 	@Override
 	public String toString() {
-		return "("+ x + " "+y+"),";
+		return "("+ x + " "+y+")";
 	}
 
     public int getClusterID() {
