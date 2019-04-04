@@ -40,29 +40,18 @@ public class Window {
 
                 data = new ArrayList<Point>();
 
-                // for(int i=0;i<10;i++){
-                // data.add(new Point(100+i*4,100+i*4,0));
-                // data.add(new Point(200+i*4,200+i*4,0));
-                // data.add(new Point(700+i*4,200+i*4,0));
-                // data.add(new Point(200+i*4,700+i*4,0));
-                // data.add(new Point(700+i*4,700+i*4,0));
-                // data.add(new Point(500+i*4,500+i*4,0));
-                //
-                // }
-
                 for (int i = 0; i < 10000; i++) {
                     data.add(new Point((int) (Math.round((Math.random() * 800))),
                             (int) (Math.round((Math.random() * 800))), 0));
-
                 }
 
                 try {
 
                     Window window = new Window();
-                    canvas = new KMeansCanvas(data, 4, null, 800, 800);
+                    canvas = new KMeansCanvas(data, 6, null, 800, 800);
                     panel_main.add(canvas, BorderLayout.CENTER);
                     canvas.paint(canvas.getGraphics());
-                    canvas.cluster(20, null, canvas.getGraphics());
+                    canvas.cluster(100, canvas.getGraphics());
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -93,12 +82,5 @@ public class Window {
         panel_main = new JPanel();
         frmKmeanSimulator.getContentPane().add(panel_main, BorderLayout.CENTER);
         panel_main.setLayout(new BorderLayout(0, 0));
-
-        // Canvas c = new Canvas();
-        // c.setBackground(Color.WHITE);
-        // panel_main.add(c, BorderLayout.CENTER);
-
-        // kMeans kmean = new kMeans(data, canvas, X_DIMENSION, Y_DIMENSION);
-        // kmean.cluster(2, 10, null);
     }
 }
